@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white !important;
+}
+
+#searchInput {
+    border-radius: 20px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+#map {
+    height: calc(100vh - 70px);
+    width: 100%;
+    z-index: 1;
+}
+
+.sidebar {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+}
+
+.filter-section {
+    background: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-section h5 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.filter-btn {
+    margin: 5px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.filter-btn.active {
+    background-color: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+#countryList {
+    padding: 15px;
+}
+
+.country-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #667eea;
+}
+
+.country-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.country-flag {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.country-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #667eea;
+}
+
+.nav-tabs .nav-link {
+    color: #667eea;
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+    color: #764ba2;
+    border-bottom: 3px solid #764ba2;
+    background: transparent;
+}
+
+.tab-content {
+    padding: 20px;
+    min-height: 300px;
+}
+
+.cuisine-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.cuisine-item {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.cuisine-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.cuisine-img:hover {
+    transform: scale(1.05);
+}
+
+.cuisine-name {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.tradition-item, .festival-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.music-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.music-section h6 {
+    color: #667eea;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+}
+
+.custom-marker {
+    background-color: #667eea;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+    }
+    
+    #map {
+        height: 50vh;
+    }
+}

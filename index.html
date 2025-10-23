@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureMap - Explore World Cultures</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <span class="navbar-brand">🌍 CultureMap - Explore World Cultures</span>
+            <input type="text" id="searchInput" class="form-control w-25" placeholder="Search country...">
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Map Section -->
+            <div class="col-lg-8 col-md-7">
+                <div id="map"></div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4 col-md-5 sidebar">
+                <div class="filter-section">
+                    <h5>🔍 Filter by Category</h5>
+                    <button class="btn btn-sm btn-outline-primary filter-btn active" data-category="all">All</button>
+                    <button class="btn btn-sm btn-outline-primary filter-btn" data-category="traditions">Traditions</button>
+                    <button class="btn btn-sm btn-outline-primary filter-btn" data-category="cuisine">Cuisine</button>
+                    <button class="btn btn-sm btn-outline-primary filter-btn" data-category="festivals">Festivals</button>
+                </div>
+
+                <div id="countryList">
+                    <!-- Country cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for detailed country view -->
+    <div class="modal fade" id="cultureModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#traditions">🏛️ Traditions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#music">🎵 Music</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#cuisine">🍽️ Cuisine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#festivals">🎉 Festivals</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="modalBody">
+                        <div id="traditions" class="tab-pane active"></div>
+                        <div id="music" class="tab-pane fade"></div>
+                        <div id="cuisine" class="tab-pane fade"></div>
+                        <div id="festivals" class="tab-pane fade"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

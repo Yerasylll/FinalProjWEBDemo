@@ -1,5 +1,5 @@
 // ============ DATA SECTION ============
-        // TODO: Add more countries here (each team member adds 2-3 countries)
+       
         const countriesData = [
             {
                 id: 1,
@@ -135,7 +135,7 @@
             }
             // TODO: Add more countries here - aim for 8-12 total
         ];
-
+//uriuiuiuri
         // ============ MAP INITIALIZATION ============
         let map;
         let markers = [];
